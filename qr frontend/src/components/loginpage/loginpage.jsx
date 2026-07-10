@@ -18,8 +18,8 @@ function Login() {
     setLoading(true);
 
     const url = isLogin
-      ? "http://localhost:3000/user/login"
-      : "http://localhost:3000/user/register";
+      ? "https://qr-scannerb.onrender.com/user/login"
+      : "https://qr-scannerb.onrender.com/user/register";
 
     const body = isLogin
       ? { email: form.email, password: form.password }
