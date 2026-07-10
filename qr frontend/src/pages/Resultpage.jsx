@@ -4,7 +4,10 @@ function Resultpage() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const data = params.get("data") || "";
-  const isUrl = data.startsWith("http://") || data.startsWith("https://");
+  
+  // Better URL detection that catches URLs without http/https prefix and other protocols
+  const isUrl = /^(https?:\/\/)?([\w\d-]+\.)+\w{2,}(\/.*)?$/i.test(data) || /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(data);
+  const hrefLink = /^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(data) ? data : (data.match(/^https?:\/\//i) ? data : `https://${data}`);
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950">
@@ -26,7 +29,7 @@ function Resultpage() {
           <div className="flex flex-col sm:flex-row gap-3">
             {isUrl && (
               <a
-                href={data}
+                href={hrefLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 bg-purple-600 hover:bg-purple-500 text-white font-medium rounded-xl transition-all duration-300 shadow-lg shadow-purple-600/25 text-center"
