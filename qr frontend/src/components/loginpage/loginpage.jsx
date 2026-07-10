@@ -58,9 +58,9 @@ function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-950 px-4">
       <div className="w-full max-w-md">
         {/* Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl shadow-purple-900/20">
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 sm:p-8 shadow-2xl shadow-purple-900/20">
           {/* QR Icon */}
-          <div className="w-16 h-16 mx-auto mb-5 bg-purple-600/20 border border-purple-500/30 rounded-2xl flex items-center justify-center">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-5 bg-purple-600/20 border border-purple-500/30 rounded-2xl flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-purple-400"
@@ -82,7 +82,7 @@ function Login() {
             </svg>
           </div>
 
-          <h1 className="text-2xl font-bold text-center text-white mb-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-center text-white mb-1">
             QR <span className="text-purple-400">Scanner</span>
           </h1>
           <p className="text-center text-purple-300/50 text-sm mb-7">

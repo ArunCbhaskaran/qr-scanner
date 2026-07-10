@@ -11,19 +11,19 @@ function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between px-8 py-5 border-b border-white/10">
-      <h1 className="text-2xl font-bold text-white">
+    <header className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 border-b border-white/10">
+      <h1 className="text-xl sm:text-2xl font-bold text-white">
         QR <span className="text-purple-400">Scanner</span>
       </h1>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {user && (
-          <span className="text-purple-300/70 text-sm">
+          <span className="hidden sm:inline text-purple-300/70 text-sm">
             Hi, {user.username || user.email}
           </span>
         )}
         <button
           onClick={user ? handleLogout : () => navigate("/login")}
-          className="px-5 py-2 text-sm font-medium bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-all duration-300 shadow-lg shadow-purple-600/25 cursor-pointer"
+          className="px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-all duration-300 shadow-lg shadow-purple-600/25 cursor-pointer"
         >
           {user ? "Logout" : "Login"}
         </button>
