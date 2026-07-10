@@ -11,7 +11,7 @@ app.use(express.json());
 app.use("/user", router);
 const server = () => {
   try {
-    mongoose.connect("mongodb://127.0.0.1:27017/qr");
+    mongoose.connect(process.env.MONGO_URL);
     console.log("mongodb is conneccted");
     app.listen(port, () => {
       console.log(`server started at port ${port}`);
